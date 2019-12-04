@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -77,6 +78,7 @@ namespace VisioneAPI.Controllers
         // POST: api/Indicador_Dados
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
+        [System.Web.Http.AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<Indicador_Dados>> PostIndicador_Dados(Indicador_Dados indicador_Dados)
         {
@@ -91,11 +93,8 @@ namespace VisioneAPI.Controllers
         [HttpPost("Indicador")]
         public async Task<ActionResult<IEnumerable<Indicador_Dados>>> PostIndicadorItensDados(IEnumerable<Indicador_Dados> indicatorDados)
         {
-            foreach (Indicador_Dados indData in indicatorDados)
-            {
-                _context.Indicador_Dados.Add(indData);
-                await _context.SaveChangesAsync();
-            }
+
+            
             
             return CreatedAtAction("GetIndicador_Dados", indicatorDados, indicatorDados);
         }

@@ -9,24 +9,21 @@ namespace VisioneAPI.Models
 {
     public class Indicador_Dados
     {
-        [ScaffoldColumn(false)]
         public int Id { get; set; }
-        public int IdEstabelecimento { get; set; }
+        public Nullable<int> IdEstabelecimento { get; set; }
         public int IdIndicador { get; set; }
-        public int? IdGestor { get; set; }
-        public int? IdUGB { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime Data { get; set; }
+        public Nullable<int> IdGestor { get; set; }
+        public Nullable<int> IdUGB { get; set; }
+        public System.DateTime Data { get; set; }
         public double Dado { get; set; }
-        public double? Meta { get; set; }
-        public double? ValorMinimo { get; set; }
-        public double? ValorMaximo { get; set; }
+        public Nullable<double> Meta { get; set; }
+        public Nullable<double> ValorMinimo { get; set; }
+        public Nullable<double> ValorMaximo { get; set; }
         public string Usuario { get; set; }
-        public double? Latitude { get; set; }
-        public double? Longitude { get; set; }
-        public int? IdCheckList { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime DataCriacao { get; set; }
+        public Nullable<double> Latitude { get; set; }
+        public Nullable<double> Longitude { get; set; }
+        public Nullable<int> IdCheckList { get; set; }
+        public System.DateTime DataCriacao { get; set; }
 
     }
 }

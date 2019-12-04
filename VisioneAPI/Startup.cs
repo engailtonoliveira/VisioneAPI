@@ -33,7 +33,9 @@ namespace VisioneAPI
                 options.AddPolicy(MyAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:8100");
+                        builder.WithOrigins("http://localhost:8100")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                     });
             });
 

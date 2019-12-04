@@ -73,7 +73,10 @@ namespace VisioneAPI.Controllers
                           select new Indicador
                           {
                               Id = indicador.Id,
+                              IdEstabelecimento = indicador.IdEstabelecimento,
                               Nome = indicador.Nome,
+                              EscalaMax = indicador.EscalaMax,
+                              EscalaMin = indicador.EscalaMin,
                               Meta = ugbIndicador.Meta,
                               ValorMaximo = ugbIndicador.ValorMaximo,
                               ValorMinimo = ugbIndicador.ValorMinimo
